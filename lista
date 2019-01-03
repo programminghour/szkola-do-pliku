@@ -1,0 +1,20 @@
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+int main()
+{
+    ifstream plik("\Nowy folder (5)\czarnalista.txt");
+
+    string dane;
+
+   while(!plik.eof())
+   {
+      // plik>>dane;
+       getline(plik,dane);
+       cout<<dane<<endl;
+   }
+    plik.close();
+    return 0;
+}
