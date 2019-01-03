@@ -1,0 +1,19 @@
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+int main()
+{
+    ifstream plik("skladniki.txt");
+
+    int li1,li2;
+
+    plik>>li1>>li2;
+
+    int suma=li1+li2;
+
+    cout<<suma;
+
+    return 0;
+}
