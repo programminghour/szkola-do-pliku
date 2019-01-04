@@ -1,3 +1,4 @@
+//1 zad
 #include <iostream>
 #include <fstream>
 
@@ -5,13 +6,122 @@ using namespace std;
 
 int main()
 {
-    ifstream plik("\Nowy folder (5)\czarnalista.txt");
+    ofstream plik("imieinazwisko.txt");
+
+    string imie,nazwisko;
+
+    cout << "Wpisz imie:";
+    cin>>imie;
+
+    cout << "Wpisz nazwisko:";
+    cin>>nazwisko;
+
+    plik<<imie<<" "<<nazwisko;
+
+    plik.close();
+
+    return 0;
+}
+//2 zad
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+int main()
+{
+    string nazwa;
+    int liczba1,liczba2;
+
+
+    cout << "Wpisz nazwe pliku:" ;
+    cin >> nazwa;
+    nazwa+=".txt";
+    cout<<"Wpisz liczbe:";
+    cin >> liczba1;
+    cout<<"Wpisz liczbe:";
+    cin >> liczba2;
+
+    ofstream plik(nazwa.c_str());
+
+    plik<<liczba1<<" "<<liczba2;
+
+    plik.close();
+
+    return 0;
+}
+//3 zad
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+int main()
+{
+    ifstream plik("skladniki.txt");
+
+    int li1,li2;
+
+    plik>>li1>>li2;
+
+
+
+    cout<<li1+li2;
+
+    return 0;
+}
+//4 zad
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+
+
+int main()
+{
+    int ile;
+
+    ofstream plik("lista.txt");
+
+    cout << "Podaj liczbe osob:";
+    cin >> ile;
+
+    for(int i=0;i<ile;i++)
+    {
+        string im,naz;
+        cout<<"Podaj imie:";
+        cin >> im;
+        cout<<"Podaj nazwisko:";
+        cin >> naz;
+        plik<<im<<" "<<naz<<endl;
+    }
+    plik.close();
+
+    return 0;
+}
+//5 zad
+#include <iostream>
+#include <fstream>
+#include <cstdlib>
+
+using namespace std;
+
+int main()
+{
+    ifstream plik("C:\\Users\\kl__1c_15\\Desktop\\Nowy folder (5)\\listaosob\\lista.txt"); //sciezka do pliku na moim komputerze
 
     string dane;
 
+   if (!plik)
+    {cout<<"blad";
+    system("PAUSE");
+    return 1;
+    }
+
    while(!plik.eof())
    {
-      // plik>>dane;
+
        getline(plik,dane);
        cout<<dane<<endl;
    }
